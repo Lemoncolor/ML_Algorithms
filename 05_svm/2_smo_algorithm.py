@@ -381,7 +381,7 @@ def smo_simple(data_mat, class_labels, C, tolerance, max_iter):
     return b, alphas
 
 
-def plot_best_fit(data_mat, labels_mat, w, b):
+def plot_best_fit(data_mat, labels_mat, w, b, alphas_):
     # 绘制样本点
     data_plus = []  # 正样本
     data_minus = []  # 负样本
@@ -424,4 +424,4 @@ if __name__ == '__main__':
     # print("alphas:{}".format(alphas[alphas > 0]))
     w_ = get_w(data, labels, alphas_)
     print(w_, b_)
-    plot_best_fit(data, labels, w_, b_)
+    plot_best_fit(data, labels, w_, b_, alphas_)
