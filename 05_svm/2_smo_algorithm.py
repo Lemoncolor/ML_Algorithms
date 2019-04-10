@@ -320,7 +320,7 @@ def smo_simple(data_mat, class_labels, C, tolerance, max_iter):
             # y[i]*Ei >  tolerance 则需要alphas[i]减小，但是不能<=0
             if ((y[i] * e_i < -tolerance) and (alphas[i] < C)) or (
                     (y[i] * e_i > tolerance) and (alphas[i] > 0)):
-                j = select_j_rand(i, m)  # 随机选择另一个与alpha[i]成对优化的alpha[j]，这里是简化版的，所有随机选择
+                j = select_j_rand(i, m)  # 随机选择另一个与alphas[i]成对优化的alphas[j]，这里是简化版的，所有随机选择
                 # 计算误差Ej
                 g_xj = float(np.multiply(alphas, y).T * (X * X[j, :].T)) + b
                 e_j = g_xj - float(y[j])
